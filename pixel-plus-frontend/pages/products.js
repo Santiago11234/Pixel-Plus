@@ -6,9 +6,9 @@ import AddToCartModal from '../components/products/AddToCartModal';
 
 
 import Image from "next/image";
-import styles from "../styles/Products.module.css"; // Make sure to create this CSS module file
+import styles from "../styles/Products.module.css"; 
 import SearchIcon from '@mui/icons-material/Search';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'; // Import the shopping cart icon
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'; 
 
 
 export default function Products() {
@@ -63,7 +63,7 @@ export default function Products() {
   </div>
   <div className="p-4 flex justify-between">
     <div>
-      <h2 className="text-lg font-bold">Phone</h2>
+      <h2 className="text-lg font-bold">Pixel Phone</h2>
       <p className="text-gray-400">Computer In Your Pocket</p>
     </div>
     <div className="text-green-300">
@@ -71,7 +71,7 @@ export default function Products() {
       <button
         className="mt-4 ml-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex items-center"
         onClick={() => openModal({
-          name: 'Phone',
+          name: 'Pixel Phone',
           image: '/iphone.png',
           price: '$799.99' 
         })}
@@ -129,7 +129,7 @@ export default function Products() {
   </div>
   <div className="p-4 flex justify-between">
     <div>
-      <h2 className="text-lg font-bold">Mouse</h2>
+      <h2 className="text-lg font-bold">Pixel Mouse</h2>
       <p className="text-gray-400">Short description here</p>
     </div>
     <div className="text-green-300">
@@ -137,7 +137,7 @@ export default function Products() {
       <button
         className="mt-4 ml-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex items-center"
         onClick={() => openModal({
-          name: 'Mouse',
+          name: 'Pixel Mouse',
           image: '/mouse.png',
           price: '$49.99' 
         })}
@@ -193,15 +193,15 @@ export default function Products() {
   </div>
   <div className="p-4 flex justify-between">
     <div>
-      <h2 className="text-lg font-bold">iPad</h2>
-      <p className="text-gray-400">Short description here</p>
+      <h2 className="text-lg font-bold">Pixal Pad</h2>
+      <p className="text-gray-400">Not A Phone, not a Computer</p>
     </div>
     <div className="text-green-300">
       <p className="text-lg">$99.99</p>
       <button
         className="mt-4 ml-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex items-center"
         onClick={() => openModal({
-          name: 'iPad',
+          name: 'Pixel Pad',
           image: '/ipad.png',
           price: '$99.99' 
         })}
@@ -292,13 +292,13 @@ export default function Products() {
       <p className="text-gray-400">New VR Headset</p>
     </div>
     <div className="text-green-300">
-      <p className="text-lg">$2099.99</p>
+      <p className="text-lg">$1999.99</p>
       <button
         className="mt-4 ml-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex items-center"
         onClick={() => openModal({
           name: 'Vision',
           image: '/vision.png',
-          price: '$2099.99' 
+          price: '$1999.99' 
         })}
       >
         <ShoppingCartIcon className="mr-2" /> 
