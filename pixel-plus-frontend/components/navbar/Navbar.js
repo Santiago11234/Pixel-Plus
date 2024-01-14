@@ -1,5 +1,3 @@
-"use context";
-
 import Link from "next/link";
 import { useState, useContext, useEffect } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
