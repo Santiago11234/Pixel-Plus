@@ -1,4 +1,4 @@
-"use context"
+"use context";
 
 import Link from "next/link";
 import { useState, useContext, useEffect } from "react";
@@ -7,7 +7,7 @@ import { CartContext } from "../../contexts/CartContext";
 
 const StyledLink = ({ href, children, className }) => (
   <Link href={href}>
-    <span className={className}>{children}</span>
+    <span className={`${className} hover:underline`}>{children}</span>
   </Link>
 );
 
@@ -17,16 +17,16 @@ export default function NavBar() {
 
   useEffect(() => {
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    setNumber(cartItems.length)
-  })
+    setNumber(cartItems.length); 
+  });
 
   return (
-    <nav className="fixed top-0 w-full p-4 pl-16 pr-16 flex justify-between items-center pb-4">
-      <StyledLink href="/" className="text-white font-bold text-3xl">
+    <nav className="fixed top-0 w-full p-4 pl-16 pr-16 pb-12 flex justify-between items-center pb-4 bg-gray-900 z-[1000]">
+      <StyledLink href="/" className="text-white font-bold text-xl ">
         Pixel Plus
       </StyledLink>
       <div className="space-x-4">
-        <StyledLink href="/" className="text-white font-bold text-xl">
+        <StyledLink href="/" className="text-white font-bold text-xl ">
           Home
         </StyledLink>
         <StyledLink href="/products" className="text-white font-bold text-xl">
@@ -40,9 +40,9 @@ export default function NavBar() {
         </StyledLink>
       </div>
       <div className="relative">
-        <ShoppingCartIcon className="text-white" />
+        <ShoppingCartIcon className="text-white hover:font-bold" />
         {number > 0 && (
-          <span className="absolute top-[-10px] right-[-10px] bg-blue-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xxs">
+          <span className="absolute top-[-10px] right-[-10px] bg-blue-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xxs ">
             {number}
           </span>
         )}
