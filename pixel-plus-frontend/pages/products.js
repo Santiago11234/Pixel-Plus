@@ -1,7 +1,7 @@
 "use context";
 
 import React, { useState } from "react";
-import NavBar from "../components/navbar/NavBar";
+import NavBar from "../components/navbar/BarNav";
 import AddToCartModal from "../components/products/AddToCartModal";
 
 import Image from "next/image";
