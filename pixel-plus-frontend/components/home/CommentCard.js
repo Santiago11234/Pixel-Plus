@@ -14,7 +14,7 @@ const CommentCard = ({ image, name, location, rating, description }) => {
     <p className="text-sm text-gray-500">{location}</p>
     <div className="flex items-center">
       <p className="mr-2">{rating}/5</p>
-      <FontAwesomeIcon icon={faStar} />
+      <FontAwesomeIcon icon={faStar} style={{color: 'rgb(239 68 68)'}} />
     </div>
   </div>
   <p className="col-span-3 mt-2">{description}</p>

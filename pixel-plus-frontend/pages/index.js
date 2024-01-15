@@ -7,6 +7,8 @@ import Ripple from "../components/home/Ripple";
 import StatCard from "../components/home/StatCard";
 import CommentCard from "../components/home/CommentCard";
 
+
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMobileAlt,
@@ -122,9 +124,11 @@ export default function Home() {
                   Buy
                 </button>
               </Link>
+              <Link href="/documentation">
               <button className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-bold py-2 px-4 rounded">
-                Learn More
+                Documentation
               </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -163,7 +167,7 @@ export default function Home() {
               Show More
             </button>
           </div>
-          <div className="grid grid-cols-6 gap-4">
+          <div className="grid grid-cols-6 gap-4 py-4">
             {sectionsToDisplay.map((section) => (
               <Link href="/products">
                 <div

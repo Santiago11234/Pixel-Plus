@@ -15,6 +15,11 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 export default function Products() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+
+const handleSearchChange = (event) => {
+ setSearchTerm(event.target.value);
+};
 
   const openModal = (product) => {
     setSelectedProduct(product);
@@ -35,11 +40,12 @@ export default function Products() {
           <h1 className="text-4xl font-bold">Great Products.</h1>
           <p className="text-2xl mt-2">Even cheaper prices.</p>
           <div className="mt-4 relative w-3/4 sm:w-1/3 mx-auto">
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="px-4 py-2 w-full border rounded-lg text-gray-800 pl-10 pr-10 "
-            />
+          <input
+ type="text"
+ placeholder="Search products..."
+ className="px-4 py-2 w-full border rounded-lg text-gray-800 pl-10 pr-10 "
+ onChange={handleSearchChange}
+/>
             <SearchIcon className="w-5 h-5 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
           </div>
         </div>
@@ -47,9 +53,11 @@ export default function Products() {
 
       <div className="container mx-auto px-6 py-8">
        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-         {products.map((product) => (
-           <ProductCard key={product.name} product={product} onAddToCart={openModal} />
-         ))}
+       {products
+ .filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase()))
+ .map((product) => (
+   <ProductCard key={product.name} product={product} onAddToCart={openModal} />
+ ))}
        </div>
      </div>
 

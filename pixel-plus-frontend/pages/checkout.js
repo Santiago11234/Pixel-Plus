@@ -97,27 +97,31 @@ export default function Checkout() {
           </ul>
         </div>
 
-        <div className="col-span-1 ">
-          <div className="bg-gray-800 rounded-lg p-4">
-            <h2 className="text-white font-medium text-lg mb-2">
-              Subtotal ({items.reduce((acc, item) => acc + item.quantity, 0)}):
-              ${" "}
-              {items
-                .reduce(
-                  (acc, item) => acc + parsePrice(item.price) * item.quantity,
-                  0
-                )
-                .toFixed(2)}
-            </h2>
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded w-full"
-              onClick={handleCheckoutClick}
-            >
-              Checkout
-            </button>
+        {items.length != 0 && (
+          <div className="col-span-1 ">
+            <div className="bg-gray-800 rounded-lg p-4">
+              <h2 className="text-white font-medium text-lg mb-2">
+                Subtotal ({items.reduce((acc, item) => acc + item.quantity, 0)}
+                ): ${" "}
+                {items
+                  .reduce(
+                    (acc, item) => acc + parsePrice(item.price) * item.quantity,
+                    0
+                  )
+                  .toFixed(2)}
+              </h2>
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded w-full"
+                onClick={handleCheckoutClick}
+              >
+                Checkout
+              </button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
+
+
       {showConfirmModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div
@@ -147,6 +151,13 @@ export default function Checkout() {
         open={showCheckoutModal}
         handleClose={() => setShowCheckoutModal(false)}
       />
+
+      { items.length == 0 && (
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="text-white font-bold text-xl my-10">Your Cart is Empty</h1>
+       
+        </div>
+      )}
     </main>
   );
 }
