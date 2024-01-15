@@ -14,8 +14,15 @@ const AddToCartModal = ({ name, image, price, isOpen, onClose }) => {
   const handleAddToCart = () => {
     setLoading(true);
     timer.current = setTimeout(() => {
-      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-      cartItems.push({ name, price, quantity });
+      let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      const existingItemIndex = cartItems.findIndex(item => item.name === name);
+   
+      if (existingItemIndex >= 0) {
+        cartItems[existingItemIndex].quantity += quantity;
+      } else {
+        cartItems.push({ name, price, quantity });
+      }
+   
       localStorage.setItem("cart", JSON.stringify(cartItems));
       setQuantity(1);
       setLoading(false);
@@ -23,7 +30,7 @@ const AddToCartModal = ({ name, image, price, isOpen, onClose }) => {
       setCartCount(cartItems.length);
       window.location.reload();
     }, 4000);
-  };
+   };
   useEffect(() => {
     return () => {
       clearTimeout(timer.current);
@@ -33,7 +40,7 @@ const AddToCartModal = ({ name, image, price, isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-slate-400 bg-opacity-50 overflow-y-auto h-full w-full flex justify-center items-center">
+    <div className="fixed inset-0 bg-slate-400 bg-opacity-50 overflow-y-auto h-full w-full flex justify-center items-center z-50">
       <div className="flex items-center justify-center">
         <div className="bg-gray-800 rounded-lg shadow-lg p-8 relative w-600 h-800">
           <button onClick={onClose} className="absolute top-2 right-2">

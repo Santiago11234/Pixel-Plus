@@ -15,11 +15,11 @@ export default function NavBar() {
 
   useEffect(() => {
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    setNumber(cartItems.length); 
+    setNumber(cartItems.length);
   });
 
   return (
-    <nav className="fixed top-0 w-full p-4 pl-16 pr-16 pb-12 flex justify-between items-center pb-4 bg-gray-900 z-[1000]">
+    <nav className="fixed top-0 w-full p-4 pl-16 pr-16 pb-12 flex justify-between items-center pb-4 bg-gray-900 z-20">
       <StyledLink href="/" className="text-white font-bold text-xl ">
         Pixel Plus
       </StyledLink>
@@ -30,20 +30,20 @@ export default function NavBar() {
         <StyledLink href="/products" className="text-white font-bold text-xl">
           Products
         </StyledLink>
-        <StyledLink href="/about" className="text-white font-bold text-xl">
-          About
+        <StyledLink href="/checkout" className="text-white font-bold text-xl">
+          Check Out
         </StyledLink>
-        <StyledLink href="/contact" className="text-white font-bold text-xl">
-          Contact
-        </StyledLink>
+       
       </div>
       <div className="relative">
-        <ShoppingCartIcon className="text-white hover:font-bold" />
-        {number > 0 && (
-          <span className="absolute top-[-10px] right-[-10px] bg-blue-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xxs ">
-            {number}
-          </span>
-        )}
+        <Link href="/checkout">
+          <ShoppingCartIcon className="text-white hover:font-bold" />
+          {number > 0 && (
+            <span className="absolute top-[-10px] right-[-10px] bg-blue-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xxs ">
+              {number}
+            </span>
+          )}
+        </Link>
       </div>
     </nav>
   );
