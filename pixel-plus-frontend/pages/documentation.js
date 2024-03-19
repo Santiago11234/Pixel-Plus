@@ -42,7 +42,7 @@ export default function Home() {
         <div className="bg-gray-800 text-white p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-bold mb-4">About This Website</h2>
           <p className="mb-4">This website was built using a variety of technologies including Next.js, Vercel, and Tailwind CSS.</p>
-          {/* ... rest of your content */}
+
           <ul className="list-disc list-inside space-y-2 text-lg">
 
             <li>Next.js is a React framework that allows you to build static and server-side rendered websites.</li>
@@ -55,7 +55,7 @@ export default function Home() {
           </ul>
 
           <h2 className="text-2xl font-bold mb-4 mt-4">Despite using libraries, all code was created by me. </h2>
-          <a href="/" download>
+          <a href="/UTE Company.pdf" download>
  <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">Download Documentation</button>
 </a>
          

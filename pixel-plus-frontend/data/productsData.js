@@ -16,7 +16,7 @@ const products = [
       name: 'Pixel Mouse',
       image: '/mouse.png',
       price: '$49.99',
-      description: 'Short description here',
+      description: 'Smooth and Fast. The Pixel Mouse Is A Game Changer',
     },
     {
       name: 'Watch',
